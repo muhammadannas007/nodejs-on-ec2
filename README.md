@@ -1,4 +1,4 @@
-# Node public repo Hello World subscribe to my channel , thanks you123
+# Node public repo Hello World subscribe to my channel , thanks 
 
 Simple node.js app that servers "A Monk in Cloud"
 
