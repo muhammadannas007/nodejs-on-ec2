@@ -13,7 +13,9 @@ pipeline {
             steps {
                 sh 'cp -r * /var/www/nodeapp'
                 sh 'cd /var/www/nodeapp'
-                sh 'pkill -f "index.js" && echo "Node js process killed"'
+                sh 'if pgrep -f "index.js" >/dev/null; then
+                pkill -f "index.js"
+                fi    "'
                 sh 'nohup pm2 start &'
                 echo 'Running tests...'
                 // Add test commands or scripts here
