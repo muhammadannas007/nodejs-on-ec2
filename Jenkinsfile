@@ -17,7 +17,7 @@ pipeline {
                 if (sh(script: 'pgrep -f "index.js" >/dev/null', returnStatus: true) == 0) {
                 sh 'pkill -f "index.js"'
                 }
-               
+                }
                 sh 'nohup pm2 start &'
                 echo 'Running tests...'
                 // Add test commands or scripts here
