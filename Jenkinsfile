@@ -11,10 +11,10 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh "cp -r * /var/www/nodeapp"
-                sh "cd /var/www/nodeapp"
-                sh "pkill -f "index.js" && echo "Node js process killed""
-                sh "nohup pm2 start &"
+                sh 'cp -r * /var/www/nodeapp'
+                sh 'cd /var/www/nodeapp'
+                sh 'pkill -f "index.js" && echo "Node js process killed"'
+                sh 'nohup pm2 start &'
             }
         }
 
