@@ -1,10 +1,10 @@
-var http = require('http');
+psvar http = require('http');
 
 //create a server object:
 http.createServer(function (req, res) {
 
 
-  res.write('A Monk in a Code qA'); //write a response to the client
+  res.write('A Monk in a Devops'); //write a response to the client
 
 
   res.end(); //end the response
