@@ -9,12 +9,21 @@ pipeline {
             }
         }
 
+
+
         stage('Deploy') {
+
+
             steps {
                 sh 'cp -r * /var/www/nodeapp'
                 sh 'cd /var/www/nodeapp'
                 script {
-                if (sh(script: 'pgrep -f "index.js" >/Quality-Assurance/null', returnStatus: true) == 0) {
+
+
+
+                if (sh(script: 'pgrep -f "index.js" >/master/null', returnStatus: true) == 0) {
+
+
                 sh 'sudo pkill -f "index.js"'
                 }
                 }
