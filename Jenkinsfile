@@ -21,7 +21,7 @@ pipeline {
 
                  def deployDirectory = "/var/www/master.com/nodeapp"
             echo "Changing to directory: ${deployDirectory}"
-            dir(deployDirectory) {   
+            dir(deployDirectory)   
                     
                     
 
