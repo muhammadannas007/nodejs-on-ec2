@@ -15,8 +15,8 @@ pipeline {
 
 
             steps {
-                sh 'cp -r * /var/www/cicdpipelinedemo.com/nodeapp'
-                sh 'cd /var/www/cicdpipelinedemo.com/nodeapp'
+                sh 'cp -r * /var/www/master.com/nodeapp'
+                sh 'cd /var/www/master.com/nodeapp'
                 script {
 
 
