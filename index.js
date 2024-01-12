@@ -5,7 +5,7 @@ http.createServer(function (req, res) {
 
 
 
-  res.write('A Monk in a Master branch'); //write a response to the client
+  res.write('A Monk in a Master '); //write a response to the client
 
 
   res.end(); //end the response
