@@ -25,7 +25,7 @@ pipeline {
                 sh 'cp -r Jenkinsfile README.md ecosystem.config.js index.js package-lock.json package.json .'
                 sh 'pm2 start'
             }
-                sh 'nohup pm2 start &'
+                
                 echo 'Running tests...'
                 // Add test commands or scripts here
             }
