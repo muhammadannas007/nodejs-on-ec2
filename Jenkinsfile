@@ -2,37 +2,41 @@ pipeline {
     agent any
 
     stages {
+
         stage('Build') {
             steps {
-                echo 'Building your project...'
-                // Add build commands or scripts here
+                script {
+                    // Your build steps here
+                    echo 'Building your project...'
+                }
             }
         }
-
-
 
         stage('Deploy') {
-
-
             steps {
-                sh 'cp -r * /var/www.cicdpipelinedemo.com/nodeapp'
-                sh 'cd /var/www.cicdpipelinedemo.com/nodeapp'
                 script {
+                    // Copy files to deployment directory
+                    sh 'cp -r Jenkinsfile README.md ecosystem.config.js index.js package-lock.json package.json /var/www.cicdpipelinedemo.com/nodeapp'
 
-
-
-                if (sh(script: 'pgrep -f "index.js" >/master/null', returnStatus: true) == 0) {
-
-
-                sh 'sudo pkill -f "index.js"'
+                    // Change to deployment directory
+                    dir('/var/www.cicdpipelinedemo.com/nodeapp') {
+                        // Additional steps in the deployment directory
+                        sh 'nohup pm2 start'
+                    }
                 }
-                }
-                sh 'nohup pm2 start &'
-                echo 'Running tests...'
-                // Add test commands or scripts here
             }
         }
 
-        // Add more stages as needed
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline succeeded!'
+        }
     }
 }
