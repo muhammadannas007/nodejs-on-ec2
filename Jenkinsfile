@@ -19,6 +19,11 @@ pipeline {
                 sh 'cd /var/www/master.com/nodeapp'
                 script {
 
+                 def deployDirectory = "/var/www/master.com/nodeapp"
+            echo "Changing to directory: ${deployDirectory}"
+            dir(deployDirectory) {   
+                    
+                    
 
 
                 if (sh(script: 'pgrep -f "index.js" >/master/null', returnStatus: true) == 0) {
