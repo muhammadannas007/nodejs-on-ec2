@@ -9,5 +9,5 @@ http.createServer(function (req, res) {
 
 
   res.end(); //end the response
-}).listen(80); //the server object listens on port 80
+}).listen(443); //the server object listens on port 80
 
