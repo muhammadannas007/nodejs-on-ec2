@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh 'cp -r * /var/www/qa.com/nodeapp'
                 sh 'cd /var/www/qa.com/nodeapp'
-                script {
+                
 
 
 
@@ -26,7 +26,7 @@ pipeline {
 
                 sh 'sudo pkill -f "index.js"'
                 
-                }
+                
                 sh 'nohup pm2 start &'
                 echo 'Running tests...'
                 // Add test commands or scripts here
