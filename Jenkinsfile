@@ -19,12 +19,6 @@ pipeline {
                 sh 'cd /var/www/qa.com/nodeapp'
                 
 
-
-
-                
-
-
-                sh 'sudo pkill -f "index.js"'
                 
                 
                 sh 'nohup pm2 start &'
