@@ -17,7 +17,6 @@ pipeline {
                 sh 'cd /var/www/master.com/nodeapp'
                 
 
-                sh 'sudo pkill -f "index.js"'
 
                 sh 'nohup pm2 start &'
                 echo 'Running tests...'
