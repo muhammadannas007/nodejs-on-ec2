@@ -15,14 +15,6 @@ pipeline {
             steps {
                 sh 'cp -r * /var/www/dev.com/nodeapp'
                 sh 'cd /var/www/dev.com/nodeapp'
-                script {
-
-
-                if (sh(script: 'pgrep -f "index.js" >/master/null', returnStatus: true) == 0) {
-
-                sh 'sudo pkill -f "index.js"'
-                }
-                }
                 sh 'nohup pm2 start &'
                 echo 'Running tests...'
                 // Add test commands or scripts here
