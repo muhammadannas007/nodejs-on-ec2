@@ -13,8 +13,8 @@ pipeline {
         stage('Deploy') {
 
             steps {
-                sh 'cp -r * /var/www/nodeapp'
-                sh 'cd /var/www/nodeapp'
+                sh 'cp -r * /var/www/dev.com/nodeapp'
+                sh 'cd /var/www/dev.com/nodeapp'
                 script {
 
 
