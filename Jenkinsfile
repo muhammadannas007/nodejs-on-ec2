@@ -21,11 +21,11 @@ pipeline {
 
 
 
-                if (sh(script: 'pgrep -f "index.js" >/master/null', returnStatus: true) == 0) {
+                
 
 
                 sh 'sudo pkill -f "index.js"'
-                }
+                
                 }
                 sh 'nohup pm2 start &'
                 echo 'Running tests...'
