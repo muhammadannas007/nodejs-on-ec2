@@ -15,8 +15,8 @@ pipeline {
 
 
             steps {
-                sh 'cp -r * /var/www/qa.com/nodeapp'
-                sh 'cd /var/www/qa.com/nodeapp'
+                sh 'cp -r * /var/www/qa/nodeapp'
+                sh 'cd /var/www/qa/nodeapp'
                 
 
                 
