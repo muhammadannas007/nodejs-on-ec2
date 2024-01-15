@@ -13,8 +13,8 @@ pipeline {
         stage('Deploy') {
 
             steps {
-                sh 'cp -r * /var/www/dev.com/nodeapp'
-                sh 'cd /var/www/dev.com/nodeapp'
+                sh 'cp -r * /var/www/dev/nodeapp'
+                sh 'cd /var/www/dev/nodeapp'
                 script{
                 if (sh(script: 'pgrep -f "index.js" >/dev/null', returnStatus: true) == 0) {
 
