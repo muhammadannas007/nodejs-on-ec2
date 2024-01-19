@@ -5,7 +5,7 @@
 
 
 
-res.write('A Monk in a Masterbranch'); //write a response to the client
+res.write('A Monk in a MASTER'); //write a response to the client
 
 
   res.end(); //end the response
