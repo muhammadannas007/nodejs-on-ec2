@@ -19,7 +19,7 @@ pipeline {
                
 
 
-                sh 'sudo pkill -f "index.js"'
+                sh 'pkill -f "index.js"'
                 
                 
 
