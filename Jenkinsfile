@@ -15,13 +15,12 @@ pipeline {
             steps {
                 sh 'cp -r * /var/www/master/nodeapp'
                 sh 'cd /var/www/master/nodeapp'
-                script{
-                if (sh(script: 'pgrep -f "index.js" >/master/null', returnStatus: true) == 0) {
+                
+               
 
 
                 sh 'sudo pkill -f "index.js"'
-                }
-                }
+                
                 
 
 
