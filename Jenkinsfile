@@ -9,23 +9,25 @@ pipeline {
             }
         }
 
-
         stage('Deploy') {
-
             steps {
-                sh 'cp -r * /var/www/master/nodeapp'
-                sh 'cd /var/www/master/nodeapp'
-                
-               
-                sh 'pgrep -f "index.js"'
+                script {
+                    // Navigate to the deployment directory
+                    dir('/var/www/master/nodeapp') {
+                        // Copy files to the deployment directory
+                        sh 'cp -r $WORKSPACE/* .'
+                        
+                        // Check if the process is running
+                        sh 'pgrep -f "index.js"'
 
+                        // Stop the Node.js process (if running)
+                        sh 'sudo pkill -f "index.js" || true'
 
-                sh 'sudo pkill -f "index.js"'
-                
-                
+                        // Start the Node.js process using pm2
+                        sh 'nohup pm2 start index.js &'
+                    }
+                }
 
-
-                sh 'nohup pm2 start &'
                 echo 'Running tests...'
                 // Add test commands or scripts here
             }
