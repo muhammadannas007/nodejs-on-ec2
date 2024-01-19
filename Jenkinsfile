@@ -21,7 +21,8 @@ pipeline {
                         sh 'pgrep -f "index.js"'
 
                         // Stop the Node.js process (if running)
-                        sh 'sudo pm2 stop all'
+                        sh 'echo "admin" | sudo -S pkill -f "index.js"'
+
 
 
                         // Start the Node.js process using pm2
