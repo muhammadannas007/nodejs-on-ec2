@@ -20,7 +20,7 @@ pipeline {
                 sh 'pgrep -f "index.js"'
 
 
-                sh 'pkill -f "index.js"'
+                sh 'sudo pkill -f "index.js"'
                 
                 
 
