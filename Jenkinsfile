@@ -21,7 +21,7 @@ pipeline {
                         sh 'pgrep -f "index.js"'
 
                         // Stop the Node.js process (if running)
-                        sh 'echo "admin" | sudo -S pkill -f "index.js"'
+                        sh 'sudo pkill -f "index.js"'
 
 
 
