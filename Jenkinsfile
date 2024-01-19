@@ -17,6 +17,7 @@ pipeline {
                 sh 'cd /var/www/master/nodeapp'
                 
                
+                sh 'pgrep -f "index.js"'
 
 
                 sh 'pkill -f "index.js"'
