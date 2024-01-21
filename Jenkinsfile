@@ -13,10 +13,10 @@ pipeline {
             steps {
                 script {
                     // Navigate to the deployment directory
-                    dir('/var/www/master/nodeapp') {
+                    
                         // Copy files to the deployment directory
-                        sh 'cp -r $WORKSPACE/* .'
-                        
+                        sh 'cp -r * /var/www/master/nodeapp'
+                        sh 'cd /var/www/master/nodeapp'
                         // Check if the process is running
                         sh 'pgrep -f "index.js"'
 
@@ -27,7 +27,7 @@ pipeline {
 
                         // Start the Node.js process using pm2
                         sh 'nohup pm2 start index.js &'
-                    }
+                }
                 }
 
                 echo 'Running tests...'
