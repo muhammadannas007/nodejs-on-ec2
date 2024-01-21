@@ -14,7 +14,8 @@ pipeline {
                 
                     // Navigate to the deployment directory
                         // Copy files to the deployment directory
-                        sh 'cp -r * /var/www/master/nodeapp'
+                        sh 'cp -r .* * /var/www/master/nodeapp'
+
                         sh 'cd /var/www/master/nodeapp'
                         // Check if the process is running
                         sh 'pgrep -f "index.js"'
