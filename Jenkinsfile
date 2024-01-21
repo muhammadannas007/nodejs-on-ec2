@@ -28,7 +28,7 @@ pipeline {
                         // Start the Node.js process using pm2
                         sh 'nohup pm2 start index.js &'
                 }
-                }
+                
 
                 echo 'Running tests...'
                 // Add test commands or scripts here
