@@ -18,7 +18,7 @@ pipeline {
 
                         sh 'cd /var/www/master/nodeapp'
                         // Check if the process is running
-                        sh 'pgrep -f "index.js"'
+                        
                         // Stop the Node.js process (if running)
                         sh 'sudo pkill -f "index.js"'
                         // Start the Node.js process using pm2
