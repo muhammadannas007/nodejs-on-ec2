@@ -11,7 +11,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                script {
+                
                     // Navigate to the deployment directory
                         // Copy files to the deployment directory
                         sh 'cp -r * /var/www/master/nodeapp'
@@ -22,7 +22,7 @@ pipeline {
                         sh 'sudo pkill -f "index.js"'
                         // Start the Node.js process using pm2
                         sh 'nohup pm2 start index.js &'
-                }
+            
                 
 
                 echo 'Running tests...'
