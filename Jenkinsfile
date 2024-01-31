@@ -30,10 +30,14 @@ pipeline {
                 // Add test commands or scripts here
             }
         }
-        stage('Docker') {
+        stage('Build Image') {
             steps {
-                echo 'Building your project...'
-                // Add build commands or scripts here
+                sh 'docker build -t my-node-app:1.0 .'
+            }
+        }
+        stage('Build Image') {
+            steps {
+                sh 'docker build -t my-node-app:1.0 .'
             }
         }
  
