@@ -30,6 +30,12 @@ pipeline {
                 // Add test commands or scripts here
             }
         }
+        stage('Docker') {
+            steps {
+                echo 'Building your project...'
+                // Add build commands or scripts here
+            }
+        }
  
 
         // Add more stages as needed
