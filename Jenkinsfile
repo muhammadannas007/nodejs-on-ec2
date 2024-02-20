@@ -33,7 +33,7 @@ pipeline {
         stage('Docker image') {
             steps {
                 sh 'docker build . -t nodejs'
-                sh 'docker run -d -p 3000:3000 --name nodecontainer nodejs'
+                sh 'docker run -d -p 3000:3000 --name nodecontainer2 nodejs'
             }
         }
        
