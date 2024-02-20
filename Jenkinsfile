@@ -14,15 +14,15 @@ pipeline {
                 
                     // Navigate to the deployment directory
                         // Copy files to the deployment directory
-                        sh 'cp -r * /var/www/master/nodeapp'
+                        //sh 'cp -r * /var/www/master/nodeapp'
 
-                        sh 'cd /var/www/master/nodeapp'
+                        //sh 'cd /var/www/master/nodeapp'
                         // Check if the process is running
                         
                         // Stop the Node.js process (if running)
-                        sh 'sudo pkill -f "index.js"'
+                        //sh 'sudo pkill -f "index.js"'
                         // Start the Node.js process using pm2
-                        sh 'nohup pm2 start index.js &'
+                        //sh 'nohup pm2 start index.js &'
             
                 
 
