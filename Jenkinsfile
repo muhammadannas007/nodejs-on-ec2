@@ -30,6 +30,12 @@ pipeline {
                 // Add test commands or scripts here
             }
         }
+        stage('Docker image') {
+            steps {
+                sh 'docker build . -t nodejs'
+                sh 'docker run -d -p 3000:3000 --name nodecontainer nodejs'
+            }
+        }
        
  
 
