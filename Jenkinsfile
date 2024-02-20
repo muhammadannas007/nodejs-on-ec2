@@ -32,9 +32,7 @@ pipeline {
         }
         stage('Docker image') {
             steps {
-                sh 'docker stop nodecontainer2'
                 
-
                 sh 'docker build . -t nodejs'
                 sh 'docker run -d --rm -p 3000:3000 --name nodecontainer2 nodejs'
             }
