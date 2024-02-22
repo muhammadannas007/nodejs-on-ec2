@@ -34,8 +34,9 @@ pipeline {
             steps {
                 
                 sh 'docker build . -t nodejs'
+                sh 'docker run --rm nodecontainer2'
                 sh 'docker run -d -p 3000:3000 --name nodecontainer2 nodejs'
-                sh 'docker run --rm'
+                
             }
         }
        
