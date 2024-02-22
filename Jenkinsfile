@@ -35,7 +35,7 @@ pipeline {
                 sh 'docker rm -f nodecontainer2 || true'
                 sh 'docker build . -t nodejs'
                 
-                sh 'docker run -d -p 3000:3000 --name nodecontainer2 nodejs'
+                sh 'docker run -d -p 3001:3001 --name nodecontainer2 nodejs'
                 
             }
         }
