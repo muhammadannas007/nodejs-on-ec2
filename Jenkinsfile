@@ -14,20 +14,27 @@ pipeline {
                 
                     // Navigate to the deployment directory
                         // Copy files to the deployment directory
-                        sh 'cp -r * /var/www/dev/nodeapp'
+                        //sh 'cp -r * /var/www/dev/nodeapp'
 
-                        sh 'cd /var/www/dev/nodeapp'
+                        //sh 'cd /var/www/dev/nodeapp'
                         // Check if the process is running
                         
                         // Stop the Node.js process (if running)
-                        sh 'sudo pkill -f "index.js"'
+                        //sh 'sudo pkill -f "index.js"'
                         // Start the Node.js process using pm2
-                        sh 'nohup pm2 start index.js &'
+                       // sh 'nohup pm2 start index.js &'
             
                 
 
                 echo 'Running tests...'
                 // Add test commands or scripts here
+            }
+        }
+        stage('Docker image') {
+            steps {
+                
+                sh 'docker build . -t nodejs'
+                sh 'docker run -d --rm -p 3000:3000 --name nodecontainer2 nodejs'
             }
         }
 
