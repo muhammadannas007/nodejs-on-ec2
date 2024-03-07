@@ -9,7 +9,7 @@ pipeline {
             
         
                 sh 'mvn --version'
-                
+                sh 'mvn clean install'
                 // Add build commands or scripts here
             }
         }
