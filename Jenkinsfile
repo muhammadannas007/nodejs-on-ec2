@@ -5,7 +5,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building your project...'
+                withMaven(maven: 'maven') {
+            
+        
                 sh 'maven --version'
+                }
                 // Add build commands or scripts here
             }
         }
