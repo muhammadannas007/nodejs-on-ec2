@@ -5,9 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building your project...'
-                withMaven(maven: 'maven-3.8.3') {
-                    sh 'mvn clean install'
-                }
+                sh 'maven --version'
                 // Add build commands or scripts here
             }
         }
