@@ -8,7 +8,7 @@ pipeline {
                 
             
         
-                sh 'maven --version'
+                sh 'mvn --version'
                 
                 // Add build commands or scripts here
             }
