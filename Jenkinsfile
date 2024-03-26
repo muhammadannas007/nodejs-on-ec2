@@ -44,7 +44,7 @@ pipeline {
                 
             }
         }
-        stages {
+        
         stage('Build') {
             steps {
                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {
