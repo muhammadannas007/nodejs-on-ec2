@@ -45,7 +45,7 @@ stages {
             }
         }
         
-        stage('Build') {
+        stage('Docker image push') {
             steps {
                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {
                     sh "docker login -u ${user} -p ${pass}"
