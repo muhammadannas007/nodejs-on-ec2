@@ -38,7 +38,7 @@ stages {
         stage('Docker image') {
             steps {
                 sh 'docker rm -f nodecontainer2 || true'
-                sh 'docker build . -t nodejs:latest'
+                sh 'docker build . -t nodejs'
                 
                 sh 'docker run -d -p 3000:3000 --name nodecontainer2 nodejs'
                 
@@ -49,7 +49,8 @@ stages {
             steps {
                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {
                     sh "docker login -u ${user} -p ${pass}"
-                    sh "docker image push nodejs:latest"
+                    sh "docker tag nodejs annasf5/nodeapp:v1.0"
+                    sh "docker image push annasf5/nodeapp:v1.0"
                     
                    
                     } 
