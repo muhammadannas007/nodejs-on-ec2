@@ -49,7 +49,7 @@ stages {
             steps {
                withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pass', usernameVariable: 'user')]) {
                     sh "docker login -u ${user} -p ${pass}"
-                    sh "docker image push annasf5/nodejs:latest"
+                    sh "docker image push nodejs:latest"
                     
                    
                     } 
