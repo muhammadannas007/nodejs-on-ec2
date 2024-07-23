@@ -26,4 +26,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+  task:
+    runs-on: self-hosted
+    steps:
+    - name: Task
+    - run: mkdir cloning
+    
+    
 
