@@ -24,7 +24,7 @@ jobs:
         port: 22
         script: |
           cd /var/www/youtube.com/
-          git pull origin main
+          git pull origin master
           git status
           ls
           
