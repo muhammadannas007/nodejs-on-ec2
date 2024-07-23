@@ -26,5 +26,5 @@ jobs:
           cd /home/osboxes
           git pull origin master
           git status
-          ls
+          
           
