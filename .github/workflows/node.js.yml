@@ -22,8 +22,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        script: |
-          export APP_PORT=3000
-          whoami
+        script: whoami
           
           
