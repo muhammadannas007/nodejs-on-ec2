@@ -25,4 +25,4 @@ jobs:
         script: |
           cd /home/osboxes
           git pull origin master
-          git status
+          npm ci
