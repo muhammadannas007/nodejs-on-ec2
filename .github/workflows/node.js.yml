@@ -23,6 +23,6 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         scripts: |
-          cd /home/osboxes
+          cd /home/osboxes/nodejs-githubactions
           ls
           
