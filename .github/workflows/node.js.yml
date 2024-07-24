@@ -30,6 +30,7 @@ jobs:
           source ~/.nvm/nvm.sh
           cd /home/osboxes/nodejs-githubactions/nodejs-on-ec2
           git pull origin master
-          npm i
+          npm ci
+          npm start
           
           
