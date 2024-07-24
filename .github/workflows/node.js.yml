@@ -22,7 +22,6 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        scripts: |
-          cd /home/osboxes/nodejs-githubactions
-          ls
+        script: |
+          whoami
           
