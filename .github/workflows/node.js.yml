@@ -27,7 +27,6 @@ jobs:
         #key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          source ~/.nvm/nvm.sh
           cd /home/osboxes/nodejs-githubactions/nodejs-on-ec2
           git pull origin master
           npm ci
