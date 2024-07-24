@@ -23,6 +23,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
+          source ~/.nvm/nvm.sh
           cd /home/osboxes
           git pull origin master
           npm i
