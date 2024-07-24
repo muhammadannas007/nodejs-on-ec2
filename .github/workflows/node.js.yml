@@ -20,8 +20,5 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          cd /home/osboxes/nodejs-githubactions/nodejs-on-ec2
-          git pull origin master
-          npm ci
-          npm start
+          pwd
 
