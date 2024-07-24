@@ -21,7 +21,9 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: 3000
+        port: 22
         script: |
+          export APP_PORT=3000
           whoami
+          
           
