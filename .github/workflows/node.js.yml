@@ -22,8 +22,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        runs: |
-          source ~/.nvm/nvm.sh
-          cd /home/osboxes/nodejs_githubactions
-          git pull origin master
-          npm i
+        scripts: |
+          cd /home/osboxes
+          ls
+          
