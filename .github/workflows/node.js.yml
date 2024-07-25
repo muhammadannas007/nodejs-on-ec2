@@ -16,5 +16,10 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          pwd
+          cd /home/osboxes/nodejs-githubactions/nodejs-on-ec2
+          git pull origin master
+          git status
+          npm ci
+          npm start
+          
 
